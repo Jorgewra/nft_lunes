@@ -25,7 +25,7 @@ import ABI from './artifacts/lunesnft.json'
 import { Card, CardContent, FormControl, InputLabel, List, ListItem, MenuItem, Select, TextField, Typography } from '@mui/material'
 import Identicon from '@polkadot/react-identicon'
 
-const address: string = process.env.CONTRACT_ADDRESS || '5CUPt3fctcu5ddRww2x1enHxU3T2ekYNJDbFDRzhyoFeug9J'
+const address: string = process.env.CONTRACT_ADDRESS || '5FtbieGRk3oHDkGqn2t82tJq6GypowQN6CwbhWK5CQEwVBtZ'
 const network: string = process.env.NETWORK || 'Lunes'
 
 const BN_TWO = new BN(2)
