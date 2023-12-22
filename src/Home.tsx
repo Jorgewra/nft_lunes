@@ -80,7 +80,7 @@ function Home() {
       'WeightV2',
       api.consts.system.blockWeights['maxBlock']
     )
-
+//Lista as NFTS
   const allToken = async () => {
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -96,7 +96,7 @@ function Home() {
       setError('Contract not initialized')
       return
     }
-    ''
+    //Estimativa do gas
     const gasLimit:any = getGasLimit(api)
     const { gasRequired, result, output } : any = await contract.query['payableMintImpl::allToken'](
       account.address,            
@@ -124,6 +124,7 @@ function Home() {
       
     }
   }
+  //detalhes NFT
   const detailsNFT = async () => {
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -164,6 +165,7 @@ function Home() {
       
     }
   }
+  //Lista NFT da carteira do usuário
   const myNFT = async () => {
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -205,7 +207,7 @@ function Home() {
     }
   }
 
-
+//Conecta a carteira
   const connectWalletHandler = async () => {
     
     setError('')
@@ -234,7 +236,7 @@ function Home() {
     }
     conectcontract()
   }
-
+  //inicia o contrato
   const conectcontract = () =>{
     setLoading(true)
     const contract = new ContractPromise(api, ABI, address);
@@ -263,6 +265,7 @@ function Home() {
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(event.target.value)
   }
+  //mint
   const mintNFThandler = async () =>{
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -299,6 +302,7 @@ function Home() {
     console.log(total_paymenyt)
     console.log(id_nft)
     const gasLimit:any = getGasLimit(api)
+    //Estimativa do gas 
     const { gasRequired, storageDeposit, result } : any = await contract.query['payableMintImpl::mint'](
       account.address,
       {
@@ -338,7 +342,7 @@ function Home() {
         return
       }
     }
-
+    //Realiza a transferência WEB3
     setLoading(true)
     await contract.tx['payableMintImpl::mint']({
         gasLimit: gasRequired,
@@ -362,6 +366,7 @@ function Home() {
       })   
 
   }
+  //Queima de NFT
   const  burnHandlerNFT = async () =>{
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -435,6 +440,7 @@ function Home() {
       })   
 
   }
+  //Tranferencia NFT
   const  transferHandlerNFT = async () =>{
     if (!api || !apiReady) {
       setError('The API is not ready')
@@ -510,7 +516,8 @@ function Home() {
       })   
 
   }
-  const savehandlerNFT = async () =>{
+  //Salva nova NFT
+  const savehandlerNewNFT = async () =>{
     if (!api || !apiReady) {
       setError('The API is not ready')
       return
