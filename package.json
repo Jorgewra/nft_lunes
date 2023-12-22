@@ -1,7 +1,6 @@
 {
-  "name": "lottery",
+  "name": "nft",
   "version": "1.0.0",
-  "author": "Nikhil Ranjan <nikhil@astar.network>",
   "license": "MIT",
   "scripts": {
     "run-node": "swanky node start",

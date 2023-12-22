@@ -3,7 +3,7 @@ import { ApiPromise, WsProvider } from '@polkadot/api';
 import React, { useEffect, useState } from 'react';
 
 export interface ApiContextType {
-	api: ApiPromise | undefined;
+	api: any | undefined;
 	apiReady: boolean;
 }
 
@@ -15,7 +15,7 @@ export interface ApiContextProviderProps {
 	children?: React.ReactElement;
 }
 
-const WS_PROVIDER = process.env.REACT_APP_WS_PROVIDER || 'wss://rpc.astar.network';
+const WS_PROVIDER = process.env.REACT_APP_WS_PROVIDER || 'ws://localhost:9944';
 
 export function ApiContextProvider(
 	props: ApiContextProviderProps

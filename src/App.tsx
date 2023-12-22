@@ -5,9 +5,9 @@ import Home from './Home';
 const App = () => {
 	return (
 		<>
-      <ApiContextProvider>
-        <Home />
-      </ApiContextProvider>
+		<ApiContextProvider>
+			<Home />
+		</ApiContextProvider>
 		</>
 	);
 };
